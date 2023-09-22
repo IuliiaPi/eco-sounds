@@ -1,6 +1,4 @@
-*,
-*:before,
-*:after {
+* {
     padding: 0;
     margin: 0;
     border: 0;
@@ -93,11 +91,15 @@ html,
     line-height: 100%;
 }
 
+.logo {
+    cursor: pointer;
+}
+
 .list-items {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
@@ -114,7 +116,11 @@ html,
 }
 
 .item._active {
-    color: rgb(46, 101, 165);
+    color: rgb(152, 168, 183);
+}
+
+.item._active:hover {
+    opacity: 1;
 }
 
 /*  -------------------------  Header styles end -------------------------------  */
@@ -128,10 +134,10 @@ html,
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: all 2s ease;
 }
 
 .main__container {
-    /* height: 100%; */
     padding: 0 0;
     display: flex;
     justify-content: center;
@@ -139,23 +145,40 @@ html,
 }
 
 .main__content {
-    /* height: 100%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-top: 20%;
 }
 
-.play:hover {
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    cursor: pointer;
+.player-icon {
+  width: 70px;
+  height: 70px;
+  /* background-size: 70px 70px; */
+  /* background-position: center center; */
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.play:active {
-    opacity: 1;
-    transition: all 0.3s ease;
+.player-icon:hover {
+  opacity: 1;
 }
 
+.player-icon:active {
+  border: 0;
+  outline: 0;
+  transform: scale(1.1);
+}
+
+.play {
+    background-image: url('./assets/svg/play.svg');
+  }
+  
+  .pause {
+    background-image: url('./assets/svg/pause.svg');
+  }
 
 /*  -------------------------  Main styles end -------------------------------  */
 
