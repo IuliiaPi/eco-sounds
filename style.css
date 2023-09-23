@@ -11,19 +11,8 @@ a {
 }
 
 ul,
-ol,
 li {
     list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: inherit;
-    font-size: inherit;
 }
 
 html {
@@ -31,8 +20,8 @@ html {
 }
 
 :root {
-    --main-color: #184260;
-    --bg-main-color: #e0f2fc;
+    --main-color: rgb(110, 157, 210);
+    --bg-main-color: rgb(37, 107, 7);
 }
 
 html,
@@ -63,7 +52,7 @@ html,
 
 .link {
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .link:hover,
@@ -73,12 +62,6 @@ html,
 }
 
 /*  -------------------------  Header styles start -------------------------------  */
-
-.header,
-.footer {
-    background-color: rgb(37, 107, 7);
-    color: rgb(110, 157, 210);
-}
 
 .header__content {
     padding: 1.1rem 0;
@@ -93,9 +76,20 @@ html,
 
 .logo {
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.list-items {
+.logo:hover {
+    filter: invert(5%) sepia(10%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(97%);
+    /* filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%); */
+}
+
+.logo:active {
+    filter: drop-shadow(8px 8px 10px rgb(185, 187, 189));
+}
+
+.nav-list {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,23 +97,23 @@ html,
     flex-wrap: wrap;
 }
 
-.item:hover {
+.nav-item:hover {
     opacity: 0.7;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.item:active {
+.nav-item:active {
     opacity: 1;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.item._active {
+.nav-item._active {
     color: rgb(152, 168, 183);
 }
 
-.item._active:hover {
+.nav-item._active:hover {
     opacity: 1;
 }
 
@@ -135,17 +129,10 @@ html,
     background-size: cover;
     background-repeat: no-repeat;
     transition: all 2s ease;
-}
 
-.main__container {
-    padding: 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.main__content {
-    padding-top: 20%;
 }
 
 .player-icon {
@@ -219,9 +206,7 @@ html,
 
 }
 
-@media screen and (max-width: 500px) {}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
 
     .page {
         font-size: 0.8rem;

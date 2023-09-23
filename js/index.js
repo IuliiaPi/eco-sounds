@@ -2,7 +2,7 @@ import playList from './playList.js';
 console.log(playList);
 
 
-const listItems = document.querySelector('.list-items');
+const navList = document.querySelector('.nav-list');
 const backgroundImage = document.querySelector('.main');
 const btnPlay = document.querySelector('.play');
 
@@ -11,14 +11,12 @@ let isPlay = false;
 
 playList.forEach((item, index) => {   // or  for(let i = 0; i < playList.length; i++) { }
     const li = document.createElement('li');
-    li.classList.add('item');
+    li.classList.add('nav-item');
     li.textContent = item.title;  // or li.textContent = `${playList[index].title}`;
-    listItems.append(li);
+    navList.append(li);
 
     li.addEventListener('click', (e) => {
         backgroundImage.style.backgroundImage = `url(${item.image})`;
-        // backgroundImage.url = playList[index].image;
-        // document.body.style.backgroundImage = `url(${playList[index].image})`;
         btnPlay.classList.add('pause');
         playAudio();
     });
@@ -49,7 +47,7 @@ playList.forEach((item, index) => {   // or  for(let i = 0; i < playList.length;
 
 // change color
 
-let buttons = listItems.getElementsByClassName('item');
+let buttons = navList.getElementsByClassName('nav-item');
 console.log(buttons);
 
 for (let i = 0; i < buttons.length; i++) {
